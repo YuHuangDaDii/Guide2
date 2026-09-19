@@ -1,0 +1,191 @@
+﻿@charset "UTF-8";
+/*
+   New Perspectives on HTML5 and CSS3, 7th Edition
+   Tutorial 2
+   Case Problem 4
+   
+   Great Lakescape Lodge Style Sheet
+   Author: 
+   Date:   
+   
+   Filename: lake_styles.css
+*/
+/*import web fonts*/
+@font-face{
+   font-family:'LodgeFont';
+   src:url('cac_champagne.woff') format('woff'),
+      url('cac_champagne.ttf') format('truetype');
+}
+@font-face{
+   font-family:'SpecialFont';
+   src:url('DobkinPlain.woff') format('woff'),
+      url('DobkinPlain.ttf') format('truetype');
+}
+
+/*Main heading styles for left and right sidebars*/
+#leftcol>h1{
+   font-family:'LodgeFont',cursive;
+   font-weight:normal;
+   font-size:4em;
+   letter-spacing:1px;
+   margin-top:0;
+   margin-bottom:0;
+}
+#rightcol h2{
+   font-family:'LodgeFont',cursive;
+   font-weight:normal;
+   font-size:2.3em;
+   letter-spacing:1px;
+   margin-top:0;
+   margin-bottom:0;
+}
+
+/*Page body style design*/
+body{
+   background-color:#C4705A;  /*set background color*/
+   color: white;     /*set font color*/
+   margin:0 auto;       /*padding set to 0, margin set to 0*/
+   padding:0;
+}
+
+/*Header section style design: background color, padding and margin*/
+header{
+   background-color:#5C1A1A;
+   padding:15px;
+   margin-bottom:0;
+}
+
+/*Footer section style design: background color, center alignment, font color*/
+footer{
+   background-color:#4f3939;
+   text-align:center;
+   color:white;
+}
+
+/* Left column layout: Dark background, 2-column Grid */
+#leftcol{
+   background-color:#1E0E0E;
+   padding:20px;
+   display:grid;
+   grid-template-columns:1fr 1fr;
+   column-gap:20px;
+   row-gap:0;
+}
+
+/* Right column layout: Dark red background */
+#rightcol{
+   background-color:#8B2D2D;
+   padding:20px;
+}
+
+/* Right column heading: White text, greenyellow bottom border */
+#rightcol h2{
+   color:white;
+   border-bottom:1px solid greenyellow;
+}
+
+/* Nav list: Remove default bullet points */
+nav ul{
+   list-style-type:none;
+}
+
+/* Aside list: Square markers, add left padding */
+aside ul{
+   list-style-type:square;
+   padding-left:20px;
+}
+/* Header links: Beige text, no underline */
+header a{
+   color:antiquewhite;
+   text-decoration:none; 
+}
+
+/* Header links on hover: Black text with underline */
+header a:hover{
+   color:black;
+   text-decoration:underline;
+}
+
+/* Left column links: Yellow text */
+#leftcol a{
+   color:#ffdd00;
+}
+
+/* Left column links on hover: Pink text */
+#leftcol a:hover{
+   color:#ff6aa6;
+}
+
+/* Right column links: Light blue text, no underline */
+#rightcol a{
+   color:lightblue;
+   text-decoration:none;
+}
+
+/* Left column paragraph first line: Bold (pseudo-element) */
+#leftcol p::first-line{
+   font-weight:bold;
+}
+
+/* Right column heading: Generate asterisk before (content generation) */
+#rightcol h2::before{
+   content:"*";
+}
+
+/* Global paragraph: Bottom margin, zero padding */
+p{
+   margin-bottom:15px;
+   padding:0;
+}
+/* Header nav: Flexbox layout, space-around, center alignment */
+header>nav>ul{
+   display:flex;
+   justify-content:space-around;
+   align-items:center;
+   padding:0;
+   margin:0;
+}
+
+/* Left column asides: Fill container, no float */
+#leftcol aside{
+   width:100%;
+   float:none;
+   margin:0;
+   padding:15px;
+}
+
+/* First aside (Notes): Semi-transparent red background */
+#leftcol aside:first-of-type{
+   background-color:rgba(255, 32, 25, 0.7);
+}
+/* Second aside (Upcoming Events): Olive green background */
+#leftcol aside:last-of-type{
+   background-color:#928E35;
+}
+
+/* Aside main heading: Special font, centered */
+#leftcol aside h1{
+   font-family:'SpecialFont',cursive;
+   font-size:2em;
+   text-align:center;
+   margin-top:0;
+   margin-bottom:10px;
+   font-weight:normal;
+}
+
+/* Aside subheading: Left aligned, smaller font size */
+#leftcol aside h2{
+   text-align:left;
+   margin-top:0;
+   margin-left:0;
+   font-size:1.1em;
+}
+/* Left column h1, img, p: Span 2 columns (Grid layout) */
+#leftcol>h1,#leftcol>img,#leftcol>p{
+   grid-column:span 2;
+}
+/* Right column blockquote: Larger font, top margin for spacing */
+#rightcol blockquote{
+   font-size:1.2em;
+   margin-top:50px;
+}
